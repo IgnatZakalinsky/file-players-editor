@@ -1,7 +1,8 @@
 import React from 'react';
 import {Redirect, Route} from "react-router-dom";
 import SignInPage from '../../neko-2-features/features-1-authorization/authorization-1-sign-in/sign-in-1-ui/SignInPage';
-import RegisterPage from '../../neko-2-features/features-1-authorization/authorization-2-register/register-1-ui/RegisterPage';
+import RegisterPage
+    from '../../neko-2-features/features-1-authorization/authorization-2-register/register-1-ui/RegisterPage';
 import ForgotPage from '../../neko-2-features/features-1-authorization/authorization-3-forgot/forgot-1-ui/ForgotPage';
 import NekoPage from "../../neko-2-features/features-3-neko/neko-1-ui/NekoPage";
 import ModalsPage from "../../neko-2-features/features-4-common/common-2-modals/modals-1-ui/ModalsPage";
@@ -16,7 +17,7 @@ export const SIGN_IN_PATH = '/sign-in';
 export const REGISTER_PATH = '/register';
 export const FORGOT_PATH = '/forgot';
 
-export const NEKO_PATH = '/neko';
+export const NEKO_PATH = '/neko'; // profile
 
 export const TEST_MODALS_PATH = '/test-modals';
 export const TEST_TIME_PATH = '/test-time';
@@ -44,8 +45,6 @@ const Routes: React.FC = () => {
             <Route path={TEST_INPUT_FILE_PATH} render={() => <FileInputPage/>}/>
 
             <Route path={SHOP_TABLE_PATH} render={() => <TablePage/>}/>
-
-
         </>
     );
 };

@@ -32,6 +32,8 @@ const Video: React.FC<IFileInputProps> = (
             }
     };
 
+    // videoRef.current!.height
+
     const play = () => videoRef && videoRef.current && videoRef.current.play();
     const pause = () => videoRef && videoRef.current && videoRef.current.pause();
     const volumeUp = () => {

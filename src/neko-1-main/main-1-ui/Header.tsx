@@ -7,22 +7,17 @@ import {
     SIGN_IN_PATH,
     TEST_MODALS_PATH,
     TEST_TIME_PATH,
-    TEST_COLOR_PATH, SHOP_TABLE_PATH, TEST_INPUT_FILE_PATH
+    TEST_COLOR_PATH,
+    SHOP_TABLE_PATH,
+    TEST_INPUT_FILE_PATH
 } from './Routes';
+import {FlexAlignCenterSpaceAroundWrap} from "../../neko-3-styles/flex-containers";
 
 const Header: React.FC = () => {
     const [show, setShow] = useState(false);
 
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexFlow: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-around',
-                flexWrap: 'wrap',
-            }}
-        >
+        <div style={{...FlexAlignCenterSpaceAroundWrap}}>
             <button onClick={() => setShow(!show)}>{show ? 'hide dev header' : 'show dev header'}</button>
 
             {show && <NavLink to={SIGN_IN_PATH}>sign-in</NavLink>}
@@ -38,8 +33,6 @@ const Header: React.FC = () => {
             {show && <NavLink to={TEST_INPUT_FILE_PATH}>inputFile</NavLink>}
 
             {show && <NavLink to={SHOP_TABLE_PATH}>shopTable</NavLink>}
-
-
         </div>
     );
 };
