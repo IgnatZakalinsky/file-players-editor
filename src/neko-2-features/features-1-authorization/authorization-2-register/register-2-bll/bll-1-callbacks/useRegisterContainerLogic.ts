@@ -1,7 +1,7 @@
-import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useDispatch} from "react-redux";
-import {REGISTER_ACTION_NAMES} from "../bll-2-redux/registerActions";
+import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useRegisterLocalState} from "./useRegisterLocalState";
+import {REGISTER_ACTION_NAMES} from "../bll-2-redux/registerActions";
 import {registerCallback} from "./registerCallBacks";
 
 export const useRegisterContainerLogic = () => {

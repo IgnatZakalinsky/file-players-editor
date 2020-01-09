@@ -31,6 +31,7 @@ const Register: React.FC<IRegisterProps> = (
     }
 ) => {
 
+    console.log('render Register');
     return (
         <div
             style={{

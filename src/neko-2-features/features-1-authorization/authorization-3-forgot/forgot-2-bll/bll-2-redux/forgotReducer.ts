@@ -3,7 +3,7 @@ import {IForgotActions, FORGOT} from "./forgotActions";
 
 export const forgotReducer = (state = forgotInitialState, action: IForgotActions) => {
     switch (action.type) {
-        case FORGOT: {
+        case FORGOT: { // blank
             return {
                 ...state,
             }

@@ -1,7 +1,7 @@
-export interface IForgotState {
+export interface IForgotState { // blank
 
 }
 
-export const forgotInitialState: IForgotState = {
+export const forgotInitialState: IForgotState = { // blank
 
 };

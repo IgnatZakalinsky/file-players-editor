@@ -1,7 +1,7 @@
-import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useDispatch} from "react-redux";
-import {FORGOT_ACTION_NAMES} from "../bll-2-redux/forgotActions";
+import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useForgotLocalState} from "./useForgotLocalState";
+import {FORGOT_ACTION_NAMES} from "../bll-2-redux/forgotActions";
 import {forgotCallback} from "./forgotCallBacks";
 
 export const useForgotContainerLogic = () => {
@@ -11,11 +11,9 @@ export const useForgotContainerLogic = () => {
 
     // local state
     const {
-        email,
-        setEmailCallback,
+        email, setEmailCallback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     } = useForgotLocalState(dispatch);
 
     // useEffects
@@ -27,11 +25,9 @@ export const useForgotContainerLogic = () => {
     return {
         loading, error, success, dispatch,
 
-        email,
-        setEmailCallback,
+        email, setEmailCallback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
 
         forgot,
     }
