@@ -25,8 +25,8 @@ export const forgot = (email: string): ThunkAction<Return, IAppStore, ExtraArgum
                 console.log('Neko Forgot Success!', data)
             }
         } catch (e) {
-            forgotError(dispatch, e.message);
+            forgotError(dispatch, e.response.data.error);
 
-            console.log('Neko Forgot Error!', e)
+            console.log('Neko Forgot Error!', {...e})
         }
     };

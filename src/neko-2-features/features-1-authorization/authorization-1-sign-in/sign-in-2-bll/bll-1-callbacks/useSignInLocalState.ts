@@ -1,6 +1,8 @@
 import {useState} from "react";
 import {Dispatch} from "redux";
 import {signInClear} from "./signInBooleanCallbacks";
+import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {SIGN_IN_ERROR} from "../bll-2-redux/signInActions";
 
 export const useSignInLocalState = (dispatch: Dispatch) => {
     const [email, setEmail] = useState('test@emali.nya');
@@ -9,28 +11,26 @@ export const useSignInLocalState = (dispatch: Dispatch) => {
 
     const [redirect, setRedirect] = useState(false);
 
+    const [error] = useBooleanSelector([SIGN_IN_ERROR]);
+
     const setEmailCallback = (emailC: string) => {
         setEmail(emailC);
-        signInClear(dispatch);
+        error.data.message && signInClear(dispatch);
     };
     const setPasswordCallback = (passwordC: string) => {
         setPassword(passwordC);
-        signInClear(dispatch);
+        error.data.message && signInClear(dispatch);
     };
     const setRememberMeCallback = (rememberMeC: boolean) => {
         setRememberMe(rememberMeC);
-        signInClear(dispatch);
+        error.data.message && signInClear(dispatch);
     };
 
     return {
-        email,
-        password,
-        rememberMe,
-        setEmailCallback,
-        setPasswordCallback,
-        setRememberMeCallback,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        rememberMe, setRememberMeCallback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     }
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
 import {FORGOT_PATH, REGISTER_PATH} from "../../../../neko-1-main/main-1-ui/Routes";
 
 interface ISignInProps {
@@ -11,9 +12,9 @@ interface ISignInProps {
     password: string;
     rememberMe: boolean;
 
-    signInSetEmailCallback: (email: string) => void;
-    signInSetPasswordCallback: (password: string) => void;
-    signInRememberMeCallback: (rememberMe: boolean) => void;
+    setEmailCallback: (email: string) => void;
+    setPasswordCallback: (password: string) => void;
+    setRememberMeCallback: (rememberMe: boolean) => void;
 
     signInCallback: () => void;
 }
@@ -28,23 +29,21 @@ const SignIn: React.FC<ISignInProps> = (
         password,
         rememberMe,
 
-        signInSetEmailCallback,
-        signInSetPasswordCallback,
-        signInRememberMeCallback,
+        setEmailCallback,
+        setPasswordCallback,
+        setRememberMeCallback,
 
         signInCallback
     }
 ) => {
     if (typeof error !== 'string') error = JSON.stringify(error);
 
+    console.log('render SignIn');
     return (
         <div
             style={{
+                ...FlexColumnCenterCenter,
                 height: '80vh',
-                display: 'flex',
-                flexFlow: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'
             }}
         >
             sign-in
@@ -58,20 +57,23 @@ const SignIn: React.FC<ISignInProps> = (
                         : <div><br/></div>
             }
 
-            <input value={email} onChange={e => signInSetEmailCallback(e.currentTarget.value)}/>
-            <input value={password} onChange={e => signInSetPasswordCallback(e.currentTarget.value)}/>
+            <input value={email} onChange={e => setEmailCallback(e.currentTarget.value)}/>
+            <input value={password} onChange={e => setPasswordCallback(e.currentTarget.value)} type={'password'}/>
 
             <NavLink to={FORGOT_PATH}>Forgot password?</NavLink>
 
             <div>
-                <input
-                    type={'checkbox'}
-                    checked={rememberMe}
-                    onChange={e => signInRememberMeCallback(e.currentTarget.checked)}
-                />
-                Remember Me
+                <label>
+                    <input
+                        type={'checkbox'}
+                        checked={rememberMe}
+                        onChange={e => setRememberMeCallback(e.currentTarget.checked)}
+                    />
+                    Remember Me
+                </label>
             </div>
-            <button onClick={signInCallback}>Sign In</button>
+
+            <button onClick={signInCallback} disabled={loading || success}>Sign In</button>
 
             <NavLink to={REGISTER_PATH}>Registration</NavLink>
         </div>

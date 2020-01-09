@@ -8,6 +8,7 @@ const instance = axios.create({
 export interface IGetMeData {
     name: string;
     token: string;
+    tokenDeathTime: number;
 
     error: string;
 }

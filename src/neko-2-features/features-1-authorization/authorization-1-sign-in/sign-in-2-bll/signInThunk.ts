@@ -30,14 +30,14 @@ export const signIn =
                 } else {
                     dispatch(nekoSetName(data.name));
 
-                    setCookie('token', data.token, 60 * 60 * 48); // 2 days
+                    setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
                     signInSuccess(dispatch, true);
 
                     console.log('Neko Sign-in Success!', data)
                 }
             } catch (e) {
-                signInError(dispatch, e.message);
+                signInError(dispatch, e.response.data.error);
 
-                console.log('Neko Sign-in Error!', e)
+                console.log('Neko Sign-in Error!', {...e})
             }
         };

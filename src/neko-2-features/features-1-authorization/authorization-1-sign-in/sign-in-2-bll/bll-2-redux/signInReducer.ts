@@ -3,7 +3,7 @@ import {ISignInActions, SIGN_IN} from "./signInActions";
 
 export const signInReducer = (state = signInInitialState, action: ISignInActions) => {
     switch (action.type) {
-        case SIGN_IN: {
+        case SIGN_IN: { // blank
             return {
                 ...state,
             }

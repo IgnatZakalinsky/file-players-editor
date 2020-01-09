@@ -27,8 +27,8 @@ export const register =
                     console.log('Neko Register Success!', data)
                 }
             } catch (e) {
-                registerError(dispatch, e.message);
+                registerError(dispatch, e.response.data.error);
 
-                console.log('Neko Register Error!', e)
+                console.log('Neko Register Error!', {...e})
             }
         };

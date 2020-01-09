@@ -3,5 +3,5 @@ export interface INekoState {
 }
 
 export const nekoInitialState: INekoState = {
-    name: 'test name',
+    name: '',
 };
