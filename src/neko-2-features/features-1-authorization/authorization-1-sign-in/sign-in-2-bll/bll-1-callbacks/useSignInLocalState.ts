@@ -5,7 +5,7 @@ import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean
 import {SIGN_IN_ERROR} from "../bll-2-redux/signInActions";
 
 export const useSignInLocalState = (dispatch: Dispatch) => {
-    const [email, setEmail] = useState('test@emali.nya');
+    const [email, setEmail] = useState('test@email.nya');
     const [password, setPassword] = useState('test password nya');
     const [rememberMe, setRememberMe] = useState(false);
 

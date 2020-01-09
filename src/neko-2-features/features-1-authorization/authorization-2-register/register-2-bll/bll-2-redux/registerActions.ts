@@ -6,12 +6,12 @@ export const REGISTER_ACTION_NAMES = [REGISTER_LOADING, REGISTER_ERROR, REGISTER
 
 export const REGISTER = 'REGISTER/SOME';
 
-interface IRegisterSome {
+interface IRegisterSome { // blank
     type: typeof REGISTER;
 }
 
 export type IRegisterActions = IRegisterSome;
 
-export const registerSome = (): IRegisterSome => ({
+export const registerSome = (): IRegisterSome => ({ // blank
     type: REGISTER,
 });

@@ -1,7 +1,7 @@
-export interface IRegisterState {
+export interface IRegisterState { // blank
 
 }
 
-export const registerInitialState: IRegisterState = {
+export const registerInitialState: IRegisterState = { // blank
 
 };

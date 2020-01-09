@@ -11,15 +11,11 @@ export const useRegisterContainerLogic = () => {
 
     // local state
     const {
-        email,
-        password,
-        password2,
-        setEmailCallback,
-        setPasswordCallback,
-        setPassword2Callback,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        password2, setPassword2Callback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     } = useRegisterLocalState(dispatch);
 
     // useEffects
@@ -31,15 +27,11 @@ export const useRegisterContainerLogic = () => {
     return {
         loading, error, success, dispatch,
 
-        email,
-        password,
-        password2,
-        setEmailCallback,
-        setPasswordCallback,
-        setPassword2Callback,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        password2, setPassword2Callback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
 
         register,
     }

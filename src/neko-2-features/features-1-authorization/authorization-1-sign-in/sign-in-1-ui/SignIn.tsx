@@ -21,22 +21,15 @@ interface ISignInProps {
 
 const SignIn: React.FC<ISignInProps> = (
     {
-        loading,
-        error,
-        success,
+        loading, error, success,
 
-        email,
-        password,
-        rememberMe,
-
-        setEmailCallback,
-        setPasswordCallback,
-        setRememberMeCallback,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        rememberMe, setRememberMeCallback,
 
         signInCallback
     }
 ) => {
-    if (typeof error !== 'string') error = JSON.stringify(error);
 
     console.log('render SignIn');
     return (

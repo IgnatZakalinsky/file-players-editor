@@ -1,36 +1,36 @@
 import {useState} from "react";
 import {Dispatch} from "redux";
 import {registerClear} from "./registerBooleanCallbacks";
+import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {REGISTER_ERROR} from "../bll-2-redux/registerActions";
 
 export const useRegisterLocalState = (dispatch: Dispatch) => {
-    const [email, setEmail] = useState('test@emali.nya');
+    const [email, setEmail] = useState('test@email.nya');
     const [password, setPassword] = useState('test password nya');
     const [password2, setPassword2] = useState('test password nya2');
 
     const [redirect, setRedirect] = useState(false);
 
+    const [error] = useBooleanSelector([REGISTER_ERROR]);
+
     const setEmailCallback = (emailC: string) => {
         setEmail(emailC);
-        registerClear(dispatch);
+        error.data.message && registerClear(dispatch);
     };
     const setPasswordCallback = (passwordC: string) => {
         setPassword(passwordC);
-        registerClear(dispatch);
+        error.data.message && registerClear(dispatch);
     };
     const setPassword2Callback = (password2C: string) => {
         setPassword2(password2C);
-        registerClear(dispatch);
+        error.data.message && registerClear(dispatch);
     };
 
     return {
-        email,
-        password,
-        password2,
-        setEmailCallback,
-        setPasswordCallback,
-        setPassword2Callback,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        password2, setPassword2Callback,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     }
 };

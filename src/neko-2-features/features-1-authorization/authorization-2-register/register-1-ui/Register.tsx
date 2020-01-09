@@ -1,4 +1,7 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
+import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
+import {SIGN_IN_PATH} from "../../../../neko-1-main/main-1-ui/Routes";
 
 interface IRegisterProps {
     loading: boolean;
@@ -9,41 +12,30 @@ interface IRegisterProps {
     password: string;
     password2: string;
 
-    registerSetEmailCallback: (email: string) => void;
-    registerSetPasswordCallback: (password: string) => void;
-    registerSetPasswordCallback2: (password: string) => void;
+    setEmailCallback: (email: string) => void;
+    setPasswordCallback: (password: string) => void;
+    setPassword2Callback: (password: string) => void;
 
     registerCallback: () => void;
 }
 
 const Register: React.FC<IRegisterProps> = (
     {
-        loading,
-        error,
-        success,
+        loading, error, success,
 
-        email,
-        password,
-        password2,
-
-        registerSetEmailCallback,
-        registerSetPasswordCallback,
-        registerSetPasswordCallback2,
+        email, setEmailCallback,
+        password, setPasswordCallback,
+        password2, setPassword2Callback,
 
         registerCallback
     }
 ) => {
-    if (typeof error !== 'string') error = JSON.stringify(error);
 
     return (
         <div
             style={{
+                ...FlexColumnCenterCenter,
                 height: '80vh',
-                display: 'flex',
-                flexFlow: 'column',
-                // flexGrow: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
             }}
         >
             register
@@ -57,11 +49,13 @@ const Register: React.FC<IRegisterProps> = (
                         : <div><br/></div>
             }
 
-            <input value={email} onChange={e => registerSetEmailCallback(e.currentTarget.value)}/>
-            <input value={password} onChange={e => registerSetPasswordCallback(e.currentTarget.value)}/>
-            <input value={password2} onChange={e => registerSetPasswordCallback2(e.currentTarget.value)}/>
+            <input value={email} onChange={e => setEmailCallback(e.currentTarget.value)}/>
+            <input value={password} onChange={e => setPasswordCallback(e.currentTarget.value)} type={'password'}/>
+            <input value={password2} onChange={e => setPassword2Callback(e.currentTarget.value)} type={'password'}/>
 
-            <button onClick={registerCallback}>Register</button>
+            <button onClick={registerCallback} disabled={loading || success}>Register</button>
+
+            <NavLink to={SIGN_IN_PATH}>Sign In</NavLink>
         </div>
     );
 };
