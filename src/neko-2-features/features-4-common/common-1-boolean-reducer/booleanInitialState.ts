@@ -7,6 +7,7 @@ export interface IBooleanObject {
     value: boolean;
     data: IBooleanDataObject;
 }
+
 export interface IBooleanState {
     booleans: IBooleanObject[];
 }

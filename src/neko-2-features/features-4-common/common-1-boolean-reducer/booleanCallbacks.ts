@@ -1,6 +1,8 @@
 import {Dispatch} from "redux";
 import {booleanSetValue} from "./booleanActions";
 
+// ACTION_NAMES == [loading, error, success]
+
 export const booleanLoading = (dispatch: Dispatch, ACTION_NAMES: string[], loading: boolean) => {
     dispatch(booleanSetValue([
         {name: ACTION_NAMES[0], value: loading, data: {}},

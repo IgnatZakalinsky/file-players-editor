@@ -7,10 +7,8 @@ export const useNekoLocalState = (dispatch: Dispatch) => {
     const [redirect, setRedirect] = useState(false);
 
     return {
-        show,
-        setShow,
+        show, setShow,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     }
 };

@@ -1,6 +1,6 @@
-import {IBooleanObject} from "./booleanInitialState";
-import {IAppStore} from "../../../neko-1-main/main-2-bll/store";
 import {useSelector} from "react-redux";
+import {IAppStore} from "../../../neko-1-main/main-2-bll/store";
+import {IBooleanObject} from "./booleanInitialState";
 
 export const selectBooleans = (store: IAppStore, names: string[]): IBooleanObject[] => {
     const result: IBooleanObject[] = [];

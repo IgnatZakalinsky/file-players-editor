@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {TEST_COLOR_PATH, TEST_MODALS_PATH, TEST_TIME_PATH} from "../../../neko-1-main/main-1-ui/Routes";
+import {FlexColumnCenterCenter} from "../../../neko-3-styles/flex-containers";
 
 interface INekoProps {
     loading: boolean;
@@ -13,8 +14,7 @@ interface INekoProps {
 
 const Neko: React.FC<INekoProps> = (
     {
-        loading,
-        error,
+        loading, error,
 
         name,
 
@@ -22,14 +22,12 @@ const Neko: React.FC<INekoProps> = (
     }
 ) => {
 
+    console.log('render NekoContainer');
     return (
         <div
             style={{
+                ...FlexColumnCenterCenter,
                 height: '80vh',
-                display: 'flex',
-                flexFlow: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'
             }}
         >
             neko
@@ -43,7 +41,7 @@ const Neko: React.FC<INekoProps> = (
                         : <div><br/></div>
             }
 
-            <button onClick={logoutCallback}>logout</button>
+            <button onClick={logoutCallback} disabled={loading}>logout</button>
 
             <NavLink to={TEST_MODALS_PATH}>Modals</NavLink>
             <NavLink to={TEST_TIME_PATH}>Time</NavLink>

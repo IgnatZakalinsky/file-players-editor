@@ -1,12 +1,13 @@
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useBooleanSelector} from "../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
-import {NEKO_ACTION_NAMES} from "../bll-2-redux/nekoActions";
 import {useNekoLocalState} from "./useNekoLocalState";
+import {IAppStore} from "../../../../neko-1-main/main-2-bll/store";
+import {NEKO_ACTION_NAMES} from "../bll-2-redux/nekoActions";
 import {logoutCallback} from "./nekoCallBacks";
-import {useEffect} from "react";
 import {getMe} from "../nekoThunks";
 import {getCookie} from "../../../features-2-helpers/helpers-1-authorization/cookies";
-import {IAppStore} from "../../../../neko-1-main/main-2-bll/store";
+
 
 export const useNekoContainerLogic = () => {
     // redux
@@ -16,19 +17,19 @@ export const useNekoContainerLogic = () => {
 
     // local state
     const {
-        show,
-        setShow,
+        show, setShow,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
     } = useNekoLocalState(dispatch);
 
     // useEffects
     useEffect(() => {
-        dispatch(getMe());
+        if (!name) dispatch(getMe());
     }, []);
+
     useEffect(() => {
         if (!getCookie('token')) setRedirect(true);
+
         else setShow(true);
     }, [name]);
 
@@ -39,11 +40,9 @@ export const useNekoContainerLogic = () => {
         loading, error, success, dispatch,
         name,
 
-        show,
-        setShow,
+        show, setShow,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
 
         logout,
     }

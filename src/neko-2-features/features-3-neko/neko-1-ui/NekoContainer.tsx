@@ -1,19 +1,18 @@
 import React from 'react';
-import Neko from "./Neko";
-import {Redirect} from "react-router";
+import {Redirect} from "react-router-dom";
 import {SIGN_IN_PATH} from "../../../neko-1-main/main-1-ui/Routes";
 import {useNekoContainerLogic} from "../neko-2-bll/bll-1-callbacks/useNekoContainerLogic";
+import Neko from "./Neko";
+import {FlexColumnCenterCenter} from "../../../neko-3-styles/flex-containers";
 
 const NekoContainer: React.FC = () => {
     const {
         loading, error, success, dispatch,
         name,
 
-        show,
-        setShow,
+        show, setShow,
 
-        redirect,
-        setRedirect,
+        redirect, setRedirect,
 
         logout,
     } = useNekoContainerLogic();
@@ -22,14 +21,13 @@ const NekoContainer: React.FC = () => {
     if (redirect) {
         return <Redirect to={SIGN_IN_PATH}/>;
     }
+
+    console.log('render NekoContainer');
     if (!show) return (
         <div
             style={{
+                ...FlexColumnCenterCenter,
                 height: '80vh',
-                display: 'flex',
-                flexFlow: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
                 color: 'orange',
             }}
         >
