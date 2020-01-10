@@ -21,7 +21,7 @@ const Header: React.FC = () => {
             {show && <NavLink to={FORGOT_PATH}>forgot</NavLink>}
 
             {show && <NavLink to={NEKO_PATH}>neko</NavLink>}
-            {show && <NavLink to={NEKO_USERS_PATH}>neko</NavLink>}
+            {show && <NavLink to={NEKO_USERS_PATH}>users</NavLink>}
 
             {show && <NavLink to={TEST_MODALS_PATH}>modals</NavLink>}
             {show && <NavLink to={TEST_TIME_PATH}>time</NavLink>}

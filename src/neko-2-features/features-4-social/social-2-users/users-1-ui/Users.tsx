@@ -7,28 +7,33 @@ interface IUsersProps {
     error: string;
 
     users: IUser[];
+    startPrivateChatCallback: (userId: string) => () => void;
 }
-
-const usersModel: ITableModel[] = [
-    {
-        title: (i: number) => (<div key={i} style={{width: '70%'}}>users</div>),
-        render: (d: IUser, i: number) => (<div key={i} style={{width: '70%'}}>{d.email}</div>)
-    },
-    {
-        title: (i: number) => (<div key={i} style={{width: '30%'}}>actions</div>),
-        render: (d: IUser, i: number) => (<div key={i} style={{width: '30%'}}><button>some action</button></div>)
-    },
-
-];
 
 const Users: React.FC<IUsersProps> = (
     {
         loading, error,
 
-        users
+        users,
+        startPrivateChatCallback
     }
 ) => {
     // const usersMap = users.map(u => <div key={u._id}>{u.email}</div>);
+    const usersModel: ITableModel[] = [
+        {
+            title: (i: number) => (<div key={i} style={{width: '70%'}}>users</div>),
+            render: (d: IUser, i: number) => (<div key={i} style={{width: '70%'}}>{d.email}</div>)
+        },
+        {
+            title: (i: number) => (<div key={i} style={{width: '30%'}}>actions</div>),
+            render: (d: IUser, i: number) => (
+                <div key={i} style={{width: '30%'}}>
+                    <button onClick={startPrivateChatCallback(d._id)}>send private message</button>
+                </div>
+            )
+        },
+
+    ];
 
     console.log('render Users');
     return (
