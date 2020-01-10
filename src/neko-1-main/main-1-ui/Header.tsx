@@ -1,15 +1,11 @@
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {
-    FORGOT_PATH,
-    NEKO_PATH,
-    REGISTER_PATH,
-    SIGN_IN_PATH,
-    TEST_MODALS_PATH,
-    TEST_TIME_PATH,
-    TEST_COLOR_PATH,
+    SIGN_IN_PATH, REGISTER_PATH, FORGOT_PATH,
+    NEKO_PATH, NEKO_USERS_PATH,
+    TEST_MODALS_PATH, TEST_TIME_PATH, TEST_COLOR_PATH,
     SHOP_TABLE_PATH,
-    TEST_INPUT_FILE_PATH
+    TEST_INPUT_FILE_PATH,
 } from './Routes';
 import {FlexAlignCenterSpaceAroundWrap} from "../../neko-3-styles/flex-containers";
 
@@ -25,6 +21,7 @@ const Header: React.FC = () => {
             {show && <NavLink to={FORGOT_PATH}>forgot</NavLink>}
 
             {show && <NavLink to={NEKO_PATH}>neko</NavLink>}
+            {show && <NavLink to={NEKO_USERS_PATH}>neko</NavLink>}
 
             {show && <NavLink to={TEST_MODALS_PATH}>modals</NavLink>}
             {show && <NavLink to={TEST_TIME_PATH}>time</NavLink>}

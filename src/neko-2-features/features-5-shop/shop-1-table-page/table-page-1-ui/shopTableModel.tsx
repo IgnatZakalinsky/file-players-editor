@@ -1,9 +1,9 @@
 import React from 'react';
-import {ITableModel} from "../../../features-4-common/common-5-table/table-1-table/table-1-ui/Table";
-import SortButton from "../../../features-4-common/common-5-table/table-4-sort-button/SortButton";
+import {ITableModel} from "../../../features-3-common/common-5-table/table-1-table/table-1-ui/Table";
+import SortButton from "../../../features-3-common/common-5-table/table-4-sort-button/SortButton";
 import AddUpdateItemModal
-    from "../../../features-4-common/common-5-table/table-5-add-update-item-modal/AddUpdateItemModal";
-import DeleteModal from "../../../features-4-common/common-5-table/table-6-delete-modal/DeleteModal";
+    from "../../../features-3-common/common-5-table/table-5-add-update-item-modal/AddUpdateItemModal";
+import DeleteModal from "../../../features-3-common/common-5-table/table-6-delete-modal/DeleteModal";
 
 export const shopTableModel = (
     update: (id: string) => void,

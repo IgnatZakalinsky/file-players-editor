@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
 import {NEKO_PATH} from "../../../../neko-1-main/main-1-ui/Routes";
-import {logoutCallback} from "../../../features-3-neko/neko-2-bll/bll-1-callbacks/nekoCallBacks";
+import {logoutCallback} from "../../../features-4-social/social-1-neko/neko-2-bll/bll-1-callbacks/nekoCallBacks";
 
 interface IDisconnectProps {
 

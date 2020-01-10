@@ -1,9 +1,9 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
-import {SIGN_IN_PATH} from "../../../neko-1-main/main-1-ui/Routes";
+import {SIGN_IN_PATH} from "../../../../neko-1-main/main-1-ui/Routes";
 import {useNekoContainerLogic} from "../neko-2-bll/bll-1-callbacks/useNekoContainerLogic";
 import Neko from "./Neko";
-import {FlexColumnCenterCenter} from "../../../neko-3-styles/flex-containers";
+import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
 
 const NekoContainer: React.FC = () => {
     const {

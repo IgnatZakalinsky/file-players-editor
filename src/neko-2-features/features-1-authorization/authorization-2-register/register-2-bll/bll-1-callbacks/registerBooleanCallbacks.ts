@@ -4,7 +4,7 @@ import {
     booleanError,
     booleanLoading,
     booleanSuccess
-} from "../../../../features-4-common/common-1-boolean-reducer/booleanCallbacks";
+} from "../../../../features-3-common/common-1-boolean-reducer/booleanCallbacks";
 import {REGISTER_ACTION_NAMES} from "../bll-2-redux/registerActions";
 
 export const registerLoading = (dispatch: Dispatch, loading: boolean) => {

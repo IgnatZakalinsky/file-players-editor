@@ -1,8 +1,8 @@
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
-import {IAppStore} from "../../../neko-1-main/main-2-bll/store";
+import {IAppStore} from "../../../../neko-1-main/main-2-bll/store";
 import {INekoActions, nekoSetName} from "./bll-2-redux/nekoActions";
 import {NekoAPI} from "../neko-3-dal/NekoAPI";
-import {getCookie, setCookie} from "../../features-2-helpers/helpers-1-authorization/cookies";
+import {getCookie, setCookie} from "../../../features-2-helpers/helpers-1-authorization/cookies";
 import {nekoLoading, nekoError, nekoSuccess} from "./bll-1-callbacks/nekoBooleanCallbacks";
 
 type Return = void;

@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {useBooleanSelector} from "../../../../features-3-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useForgotLocalState} from "./useForgotLocalState";
 import {FORGOT_ACTION_NAMES} from "../bll-2-redux/forgotActions";
 import {forgotCallback} from "./forgotCallBacks";

@@ -1,11 +1,11 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useSignInLocalState} from "./useSignInLocalState";
-import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {useBooleanSelector} from "../../../../features-3-common/common-1-boolean-reducer/useBooleanSelectors";
 import {IAppStore} from "../../../../../neko-1-main/main-2-bll/store";
-import {NEKO_LOADING, NEKO_SUCCESS} from "../../../../features-3-neko/neko-2-bll/bll-2-redux/nekoActions";
+import {NEKO_LOADING, NEKO_SUCCESS} from "../../../../features-4-social/social-1-neko/neko-2-bll/bll-2-redux/nekoActions";
 import {SIGN_IN_ACTION_NAMES} from "../bll-2-redux/signInActions";
-import {getMe} from "../../../../features-3-neko/neko-2-bll/nekoThunks";
+import {getMe} from "../../../../features-4-social/social-1-neko/neko-2-bll/nekoThunks";
 import {signInCallback} from "./signInCallBacks";
 
 export const useSignInContainerLogic = () => {

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-// import TableContainer from "../../../features-4-common/common-5-table/table-1-ui/TableContainer";
-import Table from "../../../features-4-common/common-5-table/table-1-table/table-1-ui/Table";
+// import TableContainer from "../../../features-3-common/common-5-table/table-1-ui/TableContainer";
+import Table from "../../../features-3-common/common-5-table/table-1-table/table-1-ui/Table";
 import {useDispatch, useSelector} from "react-redux";
 import {IAppStore} from "../../../../neko-1-main/main-2-bll/store";
 import {getProducts} from "../table-page-2-bll/getProductsThunks";

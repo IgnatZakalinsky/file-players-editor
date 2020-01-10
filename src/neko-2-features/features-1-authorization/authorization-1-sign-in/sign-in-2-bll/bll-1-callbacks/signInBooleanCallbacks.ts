@@ -4,7 +4,7 @@ import {
     booleanError,
     booleanLoading,
     booleanSuccess
-} from "../../../../features-4-common/common-1-boolean-reducer/booleanCallbacks";
+} from "../../../../features-3-common/common-1-boolean-reducer/booleanCallbacks";
 import {SIGN_IN_ACTION_NAMES} from "../bll-2-redux/signInActions";
 
 export const signInLoading = (dispatch: Dispatch, loading: boolean) => {

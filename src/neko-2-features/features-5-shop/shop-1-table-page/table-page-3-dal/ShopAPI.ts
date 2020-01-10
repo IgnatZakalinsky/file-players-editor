@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {baseURL} from "../../../../base-url";
-import {IShopTable} from "../../../features-4-common/common-5-table/table-1-table/table-2-bll/bll-2-redux/tableInitialState";
+import {IShopTable} from "../../../features-3-common/common-5-table/table-1-table/table-2-bll/bll-2-redux/tableInitialState";
 
 const instance = axios.create({
     baseURL

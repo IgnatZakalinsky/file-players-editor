@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Dispatch} from "redux";
 import {registerClear} from "./registerBooleanCallbacks";
-import {useBooleanSelector} from "../../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {useBooleanSelector} from "../../../../features-3-common/common-1-boolean-reducer/useBooleanSelectors";
 import {REGISTER_ERROR} from "../bll-2-redux/registerActions";
 
 export const useRegisterLocalState = (dispatch: Dispatch) => {

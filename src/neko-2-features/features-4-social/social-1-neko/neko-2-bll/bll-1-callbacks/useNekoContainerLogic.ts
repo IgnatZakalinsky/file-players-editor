@@ -1,12 +1,12 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {useBooleanSelector} from "../../../features-4-common/common-1-boolean-reducer/useBooleanSelectors";
+import {useBooleanSelector} from "../../../../features-3-common/common-1-boolean-reducer/useBooleanSelectors";
 import {useNekoLocalState} from "./useNekoLocalState";
-import {IAppStore} from "../../../../neko-1-main/main-2-bll/store";
+import {IAppStore} from "../../../../../neko-1-main/main-2-bll/store";
 import {NEKO_ACTION_NAMES} from "../bll-2-redux/nekoActions";
 import {logoutCallback} from "./nekoCallBacks";
 import {getMe} from "../nekoThunks";
-import {getCookie} from "../../../features-2-helpers/helpers-1-authorization/cookies";
+import {getCookie} from "../../../../features-2-helpers/helpers-1-authorization/cookies";
 
 
 export const useNekoContainerLogic = () => {
