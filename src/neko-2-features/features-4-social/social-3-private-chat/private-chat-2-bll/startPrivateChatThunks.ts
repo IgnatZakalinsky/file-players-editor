@@ -18,7 +18,7 @@ export const startPrivateChat = (userId: string): ThunkAction<Return, IAppStore,
                 const data = await PrivateChatAPI.startChat(token, userId);
                 if (data.error) {
                     // nekoError(dispatch, data.error);
-                    setCookie('token', '', -1000);
+                    // setCookie('token', '', -1000);
 
                     console.log('Neko Start private chat Error!', data.error, token);
                 } else {

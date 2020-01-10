@@ -12,6 +12,7 @@ import TablePage from "../../neko-2-features/features-5-shop/shop-1-table-page/t
 import FileInputPage
     from "../../neko-2-features/features-3-common/common-6-files/files-1-input/files-1-ui/FileInputPage";
 import UsersPage from "../../neko-2-features/features-4-social/social-2-users/users-1-ui/UsersPage";
+import PrivateChatsPage from '../../neko-2-features/features-4-social/social-3-private-chat/private-chat-1-ui/PrivateChatsPage';
 
 // all project paths
 export const SIGN_IN_PATH = '/sign-in';
@@ -20,6 +21,7 @@ export const FORGOT_PATH = '/forgot';
 
 export const NEKO_PATH = '/neko'; // profile
 export const NEKO_USERS_PATH = '/neko-users';
+export const PRIVATE_CHATS_PATH = '/private-chats';
 
 export const TEST_MODALS_PATH = '/test-modals';
 export const TEST_TIME_PATH = '/test-time';
@@ -40,6 +42,7 @@ const Routes: React.FC = () => {
 
             <Route path={NEKO_PATH} render={() => <NekoPage/>}/>
             <Route path={NEKO_USERS_PATH} render={() => <UsersPage/>}/>
+            <Route path={PRIVATE_CHATS_PATH} render={() => <PrivateChatsPage/>}/>
 
             <Route path={TEST_MODALS_PATH} render={() => <ModalsPage/>}/>
             <Route path={TEST_TIME_PATH} render={() => <TimePage/>}/>

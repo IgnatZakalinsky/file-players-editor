@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {
     SIGN_IN_PATH, REGISTER_PATH, FORGOT_PATH,
-    NEKO_PATH, NEKO_USERS_PATH,
+    NEKO_PATH, NEKO_USERS_PATH, PRIVATE_CHATS_PATH,
     TEST_MODALS_PATH, TEST_TIME_PATH, TEST_COLOR_PATH,
     SHOP_TABLE_PATH,
     TEST_INPUT_FILE_PATH,
@@ -22,6 +22,7 @@ const Header: React.FC = () => {
 
             {show && <NavLink to={NEKO_PATH}>neko</NavLink>}
             {show && <NavLink to={NEKO_USERS_PATH}>users</NavLink>}
+            {show && <NavLink to={PRIVATE_CHATS_PATH}>privateChats</NavLink>}
 
             {show && <NavLink to={TEST_MODALS_PATH}>modals</NavLink>}
             {show && <NavLink to={TEST_TIME_PATH}>time</NavLink>}
