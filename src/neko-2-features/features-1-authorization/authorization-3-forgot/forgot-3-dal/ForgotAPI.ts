@@ -1,9 +1,4 @@
-import axios from 'axios';
-import {baseURL} from "../../../../base-url";
-
-const instance = axios.create({
-    baseURL
-});
+import { instance } from "../../../../base-url";
 
 export interface IForgotData {
     success: boolean;

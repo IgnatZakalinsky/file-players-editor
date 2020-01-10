@@ -3,6 +3,9 @@ import {IUser} from "../users-3-dal/UsersAPI";
 import Table, {ITableModel} from "../../../features-3-common/common-5-table/table-1-table/table-1-ui/Table";
 
 interface IUsersProps {
+    loading: boolean;
+    error: string;
+
     users: IUser[];
 }
 
@@ -20,6 +23,8 @@ const usersModel: ITableModel[] = [
 
 const Users: React.FC<IUsersProps> = (
     {
+        loading, error,
+
         users
     }
 ) => {
@@ -30,14 +35,12 @@ const Users: React.FC<IUsersProps> = (
         <>
             users
 
-            {/*{loading*/}
-            {/*    ? <div style={{color: 'orange'}}>loading...</div>*/}
-            {/*    : error*/}
-            {/*        ? <div style={{color: 'red'}}>{error}</div>*/}
-            {/*        : name*/}
-            {/*            ? <div style={{color: 'lime'}}>{name}</div>*/}
-            {/*            : <div><br/></div>*/}
-            {/*}*/}
+            {loading
+                ? <div style={{color: 'orange'}}>loading...</div>
+                : error
+                    ? <div style={{color: 'red'}}>{error}</div>
+                    : <div><br/></div>
+            }
 
             {/*{usersMap}*/}
             <Table
