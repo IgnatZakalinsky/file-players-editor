@@ -6,6 +6,7 @@ import {forgotReducer} from "../../neko-2-features/features-1-authorization/auth
 import {nekoReducer} from "../../neko-2-features/features-4-social/social-1-neko/neko-2-bll/bll-2-redux/nekoReducer";
 import {booleanReducer} from "../../neko-2-features/features-3-common/common-1-boolean-reducer/booleanReducer";
 import {tableReducer} from "../../neko-2-features/features-3-common/common-5-table/table-1-table/table-2-bll/bll-2-redux/tableReducer";
+import {usersReducer} from "../../neko-2-features/features-4-social/social-2-users/users-2-bll/bll-2-redux/usersReducer";
 
 const reducers = combineReducers({
     signIn: signInReducer,
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     booleans: booleanReducer,
 
     neko: nekoReducer,
+    users: usersReducer,
 
     tables: tableReducer,
 });
