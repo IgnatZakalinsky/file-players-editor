@@ -7,6 +7,7 @@ import {nekoReducer} from "../../neko-2-features/features-4-social/social-1-neko
 import {booleanReducer} from "../../neko-2-features/features-3-common/common-1-boolean-reducer/booleanReducer";
 import {tableReducer} from "../../neko-2-features/features-3-common/common-5-table/table-1-table/table-2-bll/bll-2-redux/tableReducer";
 import {usersReducer} from "../../neko-2-features/features-4-social/social-2-users/users-2-bll/bll-2-redux/usersReducer";
+import {chatsReducer} from "../../neko-2-features/features-4-social/social-3-private-chat/private-chat-2-bll/bll-2-redux/chatsReducer";
 
 const reducers = combineReducers({
     signIn: signInReducer,
@@ -17,6 +18,7 @@ const reducers = combineReducers({
 
     neko: nekoReducer,
     users: usersReducer,
+    chats: chatsReducer,
 
     tables: tableReducer,
 });
