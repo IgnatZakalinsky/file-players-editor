@@ -5,7 +5,7 @@ import {useBooleanSelector} from "../../../../features-3-common/common-1-boolean
 import {FORGOT_ERROR} from "../bll-2-redux/forgotActions";
 
 export const useForgotLocalState = (dispatch: Dispatch) => {
-    const [email, setEmail] = useState('test@emali.nya');
+    const [email, setEmail] = useState('test@email.nya');
 
     const [redirect, setRedirect] = useState(false);
 
