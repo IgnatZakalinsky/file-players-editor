@@ -20,7 +20,7 @@ export const getMe = (): ThunkAction<Return, IAppStore, ExtraArgument, INekoActi
                 const data = await NekoAPI.getMe(token);
                 if (data.error) {
                     nekoError(dispatch, data.error);
-                    setCookie('token', '', -1000);
+                    if (data.error === 'bad token!') setCookie('token', '', -1000);
 
                     console.log('Neko Get Me Error!', data.error, token);
                 } else {
@@ -33,6 +33,7 @@ export const getMe = (): ThunkAction<Return, IAppStore, ExtraArgument, INekoActi
                 }
             } catch (e) {
                 nekoError(dispatch, e.response.data.error);
+                if (e.response.data.error === 'bad token!') setCookie('token', '', -1000);
 
                 console.log('Neko Get Me Error!', {...e})
             }

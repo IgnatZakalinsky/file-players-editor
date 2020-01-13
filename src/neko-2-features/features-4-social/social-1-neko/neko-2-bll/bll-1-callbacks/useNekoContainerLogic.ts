@@ -31,7 +31,7 @@ export const useNekoContainerLogic = () => {
         if (!getCookie('token')) setRedirect(true);
 
         else setShow(true);
-    }, [name]);
+    }, [name, error]);
 
     // callbacks
     const logout = logoutCallback(dispatch);

@@ -7,6 +7,7 @@ import {INekoActions, nekoSetName} from "../../../features-4-social/social-1-nek
 import {setCookie} from "../../../features-2-helpers/helpers-1-authorization/cookies";
 import {IBooleanActions} from "../../../features-3-common/common-1-boolean-reducer/booleanActions";
 import {signInError, signInLoading, signInSuccess} from "./bll-1-callbacks/signInBooleanCallbacks";
+import { nekoClear } from "../../../features-4-social/social-1-neko/neko-2-bll/bll-1-callbacks/nekoBooleanCallbacks";
 
 type Return = void;
 type ExtraArgument = {};
@@ -19,6 +20,7 @@ export const signIn =
             dispatch: ThunkDispatch<IAppStore, ExtraArgument, ISignInActions | INekoActions | IBooleanActions>,
             getStore: IGetStore
         ) => {
+            nekoClear(dispatch);
             signInLoading(dispatch, true);
 
             try {
@@ -28,9 +30,9 @@ export const signIn =
                     signInError(dispatch, data.error);
 
                 } else {
-                    dispatch(nekoSetName(data.name));
-
                     setCookie('token', data.token, Math.floor(data.tokenDeathTime / 1000) - 180);
+
+                    dispatch(nekoSetName(data.name));
                     signInSuccess(dispatch, true);
 
                     console.log('Neko Sign-in Success!', data)
