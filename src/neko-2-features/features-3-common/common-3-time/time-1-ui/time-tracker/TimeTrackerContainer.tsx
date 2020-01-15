@@ -56,6 +56,7 @@ const TimeTrackerContainer: React.FC = () => {
         setEndTimePause(time);
     };
 
+    console.log('render TimeTrackerContainer');
     return (
         <TimeTracker
             time={time} startTime={startTime} endTime={endTime}

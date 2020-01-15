@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import TimePicker from "rc-time-picker";
+import React from 'react';
 import 'rc-time-picker/assets/index.css';
-import moment, {Moment} from "moment";
+import {Moment} from "moment";
 import {FlexColumnCenterCenter} from "../../../../../neko-3-styles/flex-containers";
 
 interface ITimeTestProps {
@@ -25,6 +24,7 @@ const TimeTracker: React.FC<ITimeTestProps> = (
     }
 ) => {
 
+    console.log('render TimeTracker');
     return (
         <div style={{...FlexColumnCenterCenter}}>
             time tracker

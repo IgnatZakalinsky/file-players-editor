@@ -1,33 +1,56 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
 
-interface IInputColor {
+export interface IInputColor {
     color: string;
     percent: number;
 }
 
 interface ITimeTestProps {
-
+    inputs: IInputColor[]; setInputs: (inputs: IInputColor[]) => void;
+    color: string; setColor: (color: string) => void;
+    deg: number; setDeg: (deg: number) => void;
+    shift: boolean; setShift: (shift: boolean) => void;
 }
 
 const ColorTest: React.FC<ITimeTestProps> = (
     {
-
+        inputs, setInputs,
+        color, setColor,
+        deg, setDeg,
+        shift, setShift,
     }
 ) => {
-    const [color, setColor] = useState('#00ff00');
+    const mappedGradient = inputs.reduce((acc, inp) => `${acc}, ${inp.color} ${inp.percent}%`, '');
+    const colorInputs = inputs.map((inp, i) => (
+        <div key={i}>
+            <input
+                type={'color'}
+                value={inp.color}
+                onChange={
+                    e => setInputs(inputs
+                        .map((inInp, inI) => i === inI
+                            ? {...inInp, color: e.currentTarget.value} : inInp))
+                }
+            />
+            <input
+                type={'number'}
+                value={inp.percent}
+                onChange={
+                    e => setInputs(inputs
+                        .map((inInp, inI) => i === inI
+                            ? {...inInp, percent: Number(e.currentTarget.value)} : inInp))
+                }
+            />
+            <button onClick={() => setInputs(inputs.filter((inInp, inI) => inI !== i))}>
+                delete
+            </button>
+        </div>
+    ));
 
-    const [inputs, setInputs] = useState<IInputColor[]>([]);
-    // addInput, mapGradient, moveGradient, startMoving
-
+    console.log('render ColorTest');
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexFlow: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
+        <div style={{...FlexColumnCenterCenter}}>
             color
 
             <input type={'color'} value={color} onChange={e => setColor(e.currentTarget.value)}/>
@@ -37,9 +60,24 @@ const ColorTest: React.FC<ITimeTestProps> = (
                 style={{
                     width: '300px',
                     height: '100px',
-                    background: 'linear-gradient(90deg, #000000 -12%, #0000ff 13%, #00ff00 50%, #ff0000 88%, #000000 112%)',
+                    background: `linear-gradient(${deg}deg${mappedGradient})`,
                 }}
             />
+
+            <button onClick={() => setShift(!shift)}>
+                {shift ? 'stop' : 'start'}
+            </button>
+
+            <input
+                type={'number'}
+                value={deg}
+                onChange={e => setDeg(Number(e.currentTarget.value))}
+            />
+            {colorInputs}
+            <button onClick={() => setInputs([...inputs, inputs[inputs.length - 1]])}>
+                add
+            </button>
+
         </div>
     );
 };
