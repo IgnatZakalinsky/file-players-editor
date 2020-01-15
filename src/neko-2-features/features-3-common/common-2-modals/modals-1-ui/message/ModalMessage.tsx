@@ -84,6 +84,7 @@ const ModalMessage: React.FC<IModalMessage> = (
 
     if (!show) return null;
 
+    console.log('render ModalMessage');
     return (
         <Modal
             enableBackground={enableBackground}

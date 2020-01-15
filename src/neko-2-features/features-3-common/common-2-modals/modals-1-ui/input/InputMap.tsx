@@ -33,6 +33,7 @@ const InputMap: React.FC<IInputMap> = (
         for (const iD of modalInputData) iD.setValue(iD.value);
     };
 
+    console.log('render InputMap');
     return (
         <>
             {modalInputData.map(iD => (

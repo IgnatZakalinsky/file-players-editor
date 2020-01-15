@@ -8,6 +8,7 @@ const ModalInputContainer: React.FC = () => {
     const [value1, setValue1] = useState('');
     const [value2, setValue2] = useState('');
 
+    console.log('render ModalInputContainer');
     return (
         <>
             <div>

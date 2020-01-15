@@ -46,6 +46,7 @@ const ModalQuestion: React.FC<IModalQuestion> = (
     }
 ) => {
 
+    console.log('render ModalQuestion');
     return (
         <Modal
             enableBackground={enableBackground}

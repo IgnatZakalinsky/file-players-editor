@@ -14,6 +14,7 @@ const ModalQuestionContainer: React.FC = () => {
         setShow(false);
     };
 
+    console.log('render ModalQuestionContainer');
     return (
         <>
             <div>

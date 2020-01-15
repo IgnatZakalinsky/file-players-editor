@@ -59,6 +59,7 @@ const ModalMessageStack: React.FC<IModalMessageStackProps> = (
         setAddNewModal({f: addModal}); // subscribe
     }, [setAddNewModal, modals]);
 
+    console.log('render ModalMessageStack');
     return (
         <>
             {modals.map(m => {

@@ -60,6 +60,7 @@ const ModalInput: React.FC<IModalInput> = (
         close();
     };
 
+    console.log('render ModalInput');
     return (
         <Modal
             enableBackground={enableBackground}

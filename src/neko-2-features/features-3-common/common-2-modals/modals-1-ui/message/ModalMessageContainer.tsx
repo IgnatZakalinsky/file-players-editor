@@ -4,6 +4,7 @@ import ModalMessage from './ModalMessage';
 const ModalMessageContainer: React.FC = () => {
     const [show, setShow] = useState(false);
 
+    console.log('render ModalMessageContainer');
     return (
         <>
             <div>

@@ -9,6 +9,7 @@ const TimeContainer: React.FC = () => {
     const [time2, setTime2] = useState(moment(time));
     const newTime = moment.utc(time1.diff(time2)); // without tz
 
+    console.log('render TimeContainer');
     return (
         <TimeTest
             time={time}

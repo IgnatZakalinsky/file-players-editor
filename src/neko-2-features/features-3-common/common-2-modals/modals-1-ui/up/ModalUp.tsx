@@ -30,6 +30,7 @@ const ModalUp: React.FC<IModalUp> = ({speed = 10}) => {
         window.addEventListener('scroll', handleScroll);
     }, []);
 
+    console.log('render ModalUp');
     return (
         <>
             <Modal

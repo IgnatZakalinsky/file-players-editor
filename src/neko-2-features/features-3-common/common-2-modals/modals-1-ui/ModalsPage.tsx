@@ -8,6 +8,7 @@ import ModalUp from "./up/ModalUp";
 
 const ModalsPage: React.FC = () => {
 
+    console.log('render ModalPage');
     return (
         <div
             style={{

@@ -3,6 +3,7 @@ import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
 import moment, {Moment} from "moment";
 import TimeTrackerContainer from "./time-tracker/TimeTrackerContainer";
+import {FlexColumnCenterCenter} from "../../../../neko-3-styles/flex-containers";
 
 interface ITimeTestProps {
     time: Date;
@@ -26,16 +27,9 @@ const TimeTest: React.FC<ITimeTestProps> = (
     }
 ) => {
 
-
+    console.log('render TimeTest');
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexFlow: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
+        <div style={{...FlexColumnCenterCenter}}>
             time
 
             <div>{moment(time).format('HH:mm:ss')}</div>

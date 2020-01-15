@@ -4,6 +4,7 @@ import Modal from "./Modal";
 const ModalContainer: React.FC = () => {
     const [show, setShow] = useState(false);
 
+    console.log('render ModalContainer');
     return (
         <>
             <button onClick={() => setShow(true)}>show simple Modal</button>

@@ -32,6 +32,7 @@ const errorModal: IStackModal = {
 const ModalMessageStackContainer: React.FC = () => {
     const [addNewModal, setAddNewModal] = useState({f: (modal: IStackModal) => {}}); // subscribe
 
+    console.log('render ModalMessageStackContainer');
     return (
         <>
             <div
